@@ -45,6 +45,8 @@ DEFAULT_PROCESSED_EXTS = [
     ".mp4", ".mov", ".m4v", ".avi", ".mkv"
 ]
 
+RAW_VIDEO_EXTS = {".insv", ".braw"}
+
 DEFAULT_ROUTING_RULES = [
     # Insta360 (many SD cards have INSTA360 folder; .insv should be RAW-like)
     {
@@ -71,6 +73,9 @@ DEFAULT_ROUTING_RULES = [
         "dest_tag": "Camera"
     }
 ]
+
+META_DEFAULT_TAG = "_General"
+META_DEFAULT_LOCATION = "_Unknown"
 
 COMMON_MEDIA_FOLDERS = [
     "DCIM",
@@ -292,6 +297,8 @@ class AppConfig:
     routing_rules: List[Dict[str, Any]]
     date_strategy: str  # exif_then_mtime | mtime_only
     exiftool_path: str  # "" or "exiftool"
+    friend_tag: str
+    location: str
 
     immich: ImmichConfig
 
@@ -328,6 +335,8 @@ def load_config(root: Path) -> AppConfig:
         routing_rules=list(data.get("routing_rules", DEFAULT_ROUTING_RULES)),
         date_strategy=str(data.get("date_strategy", "exif_then_mtime")),
         exiftool_path=str(data.get("exiftool_path", "")),
+        friend_tag=str(data.get("friend_tag", "")).strip(),
+        location=str(data.get("location", "")).strip(),
         immich=ImmichConfig(
             enabled=bool(imm.get("enabled", True)),
             cli_path=str(imm.get("cli_path", "immich")),
@@ -350,6 +359,8 @@ def save_config(cfg: AppConfig) -> None:
         "routing_rules": cfg.routing_rules,
         "date_strategy": cfg.date_strategy,
         "exiftool_path": cfg.exiftool_path,
+        "friend_tag": cfg.friend_tag,
+        "location": cfg.location,
         "immich": {
             "enabled": cfg.immich.enabled,
             "cli_path": cfg.immich.cli_path,
@@ -465,6 +476,28 @@ def route_file(cfg: AppConfig, src: Path) -> Tuple[str, str]:
     return "unknown", ""
 
 
+def raw_bucket_subfolder(src: Path) -> str:
+    """
+    Determines whether a RAW file belongs under photo or video subfolders.
+    Defaults to photo unless the extension explicitly maps to RAW video.
+    """
+    return "video" if src.suffix.lower() in RAW_VIDEO_EXTS else "photo"
+
+
+def _sanitize_meta_folder(value: str, fallback: str) -> str:
+    candidate = (value or "").strip()
+    if not candidate:
+        return fallback
+    candidate = re.sub(r"[\\/:*?\"<>|]+", "_", candidate)
+    return candidate
+
+
+def raw_metadata_prefix(cfg: AppConfig) -> Path:
+    tag = _sanitize_meta_folder(cfg.friend_tag, META_DEFAULT_TAG)
+    loc = _sanitize_meta_folder(cfg.location, META_DEFAULT_LOCATION)
+    return cfg.raw_root / tag / loc
+
+
 # -----------------------------
 # SD/source autodetect (1)
 # -----------------------------
@@ -560,7 +593,7 @@ def intake_media(cfg: AppConfig, source: Path, log_cb, progress_cb, stop_flag) -
             year, year_month = date_folders_from_dt(dt)
 
             if bucket == "raw":
-                base_dir = cfg.raw_root
+                base_dir = cfg.raw_root / raw_bucket_subfolder(src)
             elif bucket == "processed":
                 base_dir = cfg.processed_stage_root
             else:
@@ -651,9 +684,14 @@ class SetupWizard(tk.Toplevel):
         self.var_proc_exts = tk.StringVar(value=" ".join(DEFAULT_PROCESSED_EXTS))
         self.var_rules_json = tk.StringVar(value=json.dumps(DEFAULT_ROUTING_RULES, indent=2))
 
+        self.var_friend_tag = tk.StringVar(value="")
+        self.var_location = tk.StringVar(value="")
+
         # Unknown handling
         self.var_include_unknown = tk.BooleanVar(value=False)
         self.var_unknown_name = tk.StringVar(value="_Unknown")
+
+        self.rules_box: Optional[tk.Text] = None
 
         if existing_cfg:
             self._load_from_existing(existing_cfg)
@@ -675,6 +713,8 @@ class SetupWizard(tk.Toplevel):
         self.var_raw_exts.set(" ".join(cfg.raw_extensions))
         self.var_proc_exts.set(" ".join(cfg.processed_extensions))
         self.var_rules_json.set(json.dumps(cfg.routing_rules, indent=2))
+        self.var_friend_tag.set(cfg.friend_tag)
+        self.var_location.set(cfg.location)
         self.var_include_unknown.set(cfg.include_unknown)
         self.var_unknown_name.set(cfg.unknown_subfolder_name)
 
@@ -683,11 +723,18 @@ class SetupWizard(tk.Toplevel):
         if p:
             var.set(p)
 
+    def _sync_rules_from_editor(self):
+        if self.rules_box:
+            self.var_rules_json.set(self.rules_box.get("1.0", "end").strip())
+
     def _build(self):
         frm = ttk.Frame(self, padding=16)
         frm.pack(fill="both", expand=True)
 
         ttk.Label(frm, text=f"{APP_NAME} Setup Wizard", font=("Segoe UI", 14, "bold")).pack(anchor="w")
+        top_actions = ttk.Frame(frm)
+        top_actions.pack(fill="x", pady=(4, 12))
+        ttk.Button(top_actions, text="Save settings", command=self._finish).pack(side="right")
 
         # Config root
         block = ttk.LabelFrame(frm, text="Where to store settings (sync this folder across machines)", padding=12)
@@ -749,9 +796,7 @@ class SetupWizard(tk.Toplevel):
         rules_box = tk.Text(block6, height=10, wrap="none")
         rules_box.pack(fill="both", expand=True)
         rules_box.insert("1.0", self.var_rules_json.get())
-
-        def sync_rules_out():
-            self.var_rules_json.set(rules_box.get("1.0", "end").strip())
+        self.rules_box = rules_box
 
         # Immich
         block7 = ttk.LabelFrame(frm, text="Immich upload (optional)", padding=12)
@@ -793,11 +838,11 @@ class SetupWizard(tk.Toplevel):
         btns = ttk.Frame(frm)
         btns.pack(fill="x", pady=(8, 0))
         ttk.Button(btns, text="Cancel", command=self.destroy).pack(side="right")
-        ttk.Button(btns, text="Save & Finish", command=lambda: self._finish(sync_rules_out)).pack(side="right", padx=8)
+        ttk.Button(btns, text="Finish & save config", command=self._finish).pack(side="right", padx=8)
 
-    def _finish(self, sync_rules_out):
+    def _finish(self):
         try:
-            sync_rules_out()
+            self._sync_rules_from_editor()
 
             root = Path(self.var_config_root.get()).expanduser()
             ensure_dir(root)

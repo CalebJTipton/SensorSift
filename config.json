@@ -1,0 +1,90 @@
+{
+  "raw_root": "\\\\Synology-NAS1\\Imagery\\raw",
+  "processed_stage_root": "C:\\Users\\Caleb\\OneDrive\\Desktop\\SnapSift\\Immich_Staging",
+  "processed_uploaded_root": "C:\\Users\\Caleb\\OneDrive\\SensorSift\\Immich_Uploaded",
+  "copy_mode": "copy",
+  "raw_extensions": [
+    ".cr2",
+    ".cr3",
+    ".arw",
+    ".dng",
+    ".nef",
+    ".raf",
+    ".rw2",
+    ".orf",
+    ".x3f",
+    ".srw",
+    ".pef",
+    ".iiq",
+    ".3fr",
+    ".braw",
+    ".insv"
+  ],
+  "processed_extensions": [
+    ".jpg",
+    ".jpeg",
+    ".png",
+    ".heic",
+    ".gif",
+    ".tif",
+    ".tiff",
+    ".mp4",
+    ".mov",
+    ".m4v",
+    ".avi",
+    ".mkv"
+  ],
+  "include_unknown": false,
+  "unknown_subfolder_name": "_Unknown",
+  "routing_rules": [
+    {
+      "name": "Insta360 RAW-like",
+      "path_contains_any": [
+        "INSTA360"
+      ],
+      "ext_in": [
+        ".insv",
+        ".dng"
+      ],
+      "bucket": "raw",
+      "dest_tag": "Insta360"
+    },
+    {
+      "name": "GoPro processed media",
+      "path_contains_any": [
+        "GOPRO"
+      ],
+      "ext_in": [
+        ".mp4",
+        ".mov",
+        ".jpg",
+        ".jpeg"
+      ],
+      "bucket": "processed",
+      "dest_tag": "GoPro"
+    },
+    {
+      "name": "DCIM processed media",
+      "path_contains_any": [
+        "DCIM"
+      ],
+      "ext_in": [
+        ".mp4",
+        ".mov",
+        ".jpg",
+        ".jpeg",
+        ".png",
+        ".heic"
+      ],
+      "bucket": "processed",
+      "dest_tag": "Camera"
+    }
+  ],
+  "date_strategy": "exif_then_mtime",
+  "exiftool_path": "exiftool",
+  "immich": {
+    "enabled": true,
+    "cli_path": "immich",
+    "server_url": "http://127.0.0.1:2283/api"
+  }
+}

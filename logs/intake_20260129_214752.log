@@ -1,0 +1,80 @@
+SensorSift intake run: 2026-01-29T21:47:52.968198
+Source: E:\Video Storage\Christmas 2025\Insta360X2
+Mode: copy
+Files found: 66
+Date strategy: exif_then_mtime (exiftool: exiftool)
+
+SKIP (unknown): E:\Video Storage\Christmas 2025\Insta360X2\fileinfo_list.list
+OK  [raw] E:\Video Storage\Christmas 2025\Insta360X2\Camera01\VID_20251217_181752_00_001.insv -> \\Synology-NAS1\Imagery\raw\video\Insta360\2025\2025-12\VID_20251217_181752_00_001.insv
+OK  [raw] E:\Video Storage\Christmas 2025\Insta360X2\Camera01\LRV_20251217_181752_11_001.insv -> \\Synology-NAS1\Imagery\raw\video\Insta360\2025\2025-12\LRV_20251217_181752_11_001.insv
+OK  [raw] E:\Video Storage\Christmas 2025\Insta360X2\Camera01\VID_20251217_181752_10_001.insv -> \\Synology-NAS1\Imagery\raw\video\Insta360\2025\2025-12\VID_20251217_181752_10_001.insv
+OK  [raw] E:\Video Storage\Christmas 2025\Insta360X2\Camera01\VID_20251217_182415_00_002.insv -> \\Synology-NAS1\Imagery\raw\video\Insta360\2025\2025-12\VID_20251217_182415_00_002.insv
+OK  [raw] E:\Video Storage\Christmas 2025\Insta360X2\Camera01\LRV_20251217_182415_11_002.insv -> \\Synology-NAS1\Imagery\raw\video\Insta360\2025\2025-12\LRV_20251217_182415_11_002.insv
+OK  [raw] E:\Video Storage\Christmas 2025\Insta360X2\Camera01\VID_20251217_182415_10_002.insv -> \\Synology-NAS1\Imagery\raw\video\Insta360\2025\2025-12\VID_20251217_182415_10_002.insv
+OK  [raw] E:\Video Storage\Christmas 2025\Insta360X2\Camera01\VID_20251217_182734_00_003.insv -> \\Synology-NAS1\Imagery\raw\video\Insta360\2025\2025-12\VID_20251217_182734_00_003.insv
+OK  [raw] E:\Video Storage\Christmas 2025\Insta360X2\Camera01\LRV_20251217_182734_11_003.insv -> \\Synology-NAS1\Imagery\raw\video\Insta360\2025\2025-12\LRV_20251217_182734_11_003.insv
+OK  [raw] E:\Video Storage\Christmas 2025\Insta360X2\Camera01\VID_20251217_182734_10_003.insv -> \\Synology-NAS1\Imagery\raw\video\Insta360\2025\2025-12\VID_20251217_182734_10_003.insv
+OK  [raw] E:\Video Storage\Christmas 2025\Insta360X2\Camera01\VID_20251217_185332_00_004.insv -> \\Synology-NAS1\Imagery\raw\video\Insta360\2025\2025-12\VID_20251217_185332_00_004.insv
+OK  [raw] E:\Video Storage\Christmas 2025\Insta360X2\Camera01\LRV_20251217_185332_11_004.insv -> \\Synology-NAS1\Imagery\raw\video\Insta360\2025\2025-12\LRV_20251217_185332_11_004.insv
+OK  [raw] E:\Video Storage\Christmas 2025\Insta360X2\Camera01\VID_20251217_185332_10_004.insv -> \\Synology-NAS1\Imagery\raw\video\Insta360\2025\2025-12\VID_20251217_185332_10_004.insv
+OK  [raw] E:\Video Storage\Christmas 2025\Insta360X2\Camera01\VID_20251225_113559_00_005.insv -> \\Synology-NAS1\Imagery\raw\video\Insta360\2025\2025-12\VID_20251225_113559_00_005.insv
+OK  [raw] E:\Video Storage\Christmas 2025\Insta360X2\Camera01\VID_20251225_113559_10_005.insv -> \\Synology-NAS1\Imagery\raw\video\Insta360\2025\2025-12\VID_20251225_113559_10_005.insv
+OK  [raw] E:\Video Storage\Christmas 2025\Insta360X2\Camera01\VID_20251225_114633_00_006.insv -> \\Synology-NAS1\Imagery\raw\video\Insta360\2025\2025-12\VID_20251225_114633_00_006.insv
+OK  [raw] E:\Video Storage\Christmas 2025\Insta360X2\Camera01\LRV_20251225_114633_11_006.insv -> \\Synology-NAS1\Imagery\raw\video\Insta360\2025\2025-12\LRV_20251225_114633_11_006.insv
+OK  [raw] E:\Video Storage\Christmas 2025\Insta360X2\Camera01\VID_20251225_114633_10_006.insv -> \\Synology-NAS1\Imagery\raw\video\Insta360\2025\2025-12\VID_20251225_114633_10_006.insv
+OK  [raw] E:\Video Storage\Christmas 2025\Insta360X2\Camera01\VID_20251225_120315_00_007.insv -> \\Synology-NAS1\Imagery\raw\video\Insta360\2025\2025-12\VID_20251225_120315_00_007.insv
+OK  [raw] E:\Video Storage\Christmas 2025\Insta360X2\Camera01\LRV_20251225_120315_11_007.insv -> \\Synology-NAS1\Imagery\raw\video\Insta360\2025\2025-12\LRV_20251225_120315_11_007.insv
+OK  [raw] E:\Video Storage\Christmas 2025\Insta360X2\Camera01\VID_20251225_120315_10_007.insv -> \\Synology-NAS1\Imagery\raw\video\Insta360\2025\2025-12\VID_20251225_120315_10_007.insv
+OK  [raw] E:\Video Storage\Christmas 2025\Insta360X2\Camera01\VID_20251225_120731_00_008.insv -> \\Synology-NAS1\Imagery\raw\video\Insta360\2025\2025-12\VID_20251225_120731_00_008.insv
+OK  [raw] E:\Video Storage\Christmas 2025\Insta360X2\Camera01\LRV_20251225_120731_11_008.insv -> \\Synology-NAS1\Imagery\raw\video\Insta360\2025\2025-12\LRV_20251225_120731_11_008.insv
+OK  [raw] E:\Video Storage\Christmas 2025\Insta360X2\Camera01\VID_20251225_120731_10_008.insv -> \\Synology-NAS1\Imagery\raw\video\Insta360\2025\2025-12\VID_20251225_120731_10_008.insv
+OK  [raw] E:\Video Storage\Christmas 2025\Insta360X2\Camera01\VID_20251225_123157_00_009.insv -> \\Synology-NAS1\Imagery\raw\video\Insta360\2025\2025-12\VID_20251225_123157_00_009.insv
+OK  [raw] E:\Video Storage\Christmas 2025\Insta360X2\Camera01\LRV_20251225_123157_11_009.insv -> \\Synology-NAS1\Imagery\raw\video\Insta360\2025\2025-12\LRV_20251225_123157_11_009.insv
+OK  [raw] E:\Video Storage\Christmas 2025\Insta360X2\Camera01\VID_20251225_123157_10_009.insv -> \\Synology-NAS1\Imagery\raw\video\Insta360\2025\2025-12\VID_20251225_123157_10_009.insv
+OK  [raw] E:\Video Storage\Christmas 2025\Insta360X2\Camera01\VID_20251225_123209_00_010.insv -> \\Synology-NAS1\Imagery\raw\video\Insta360\2025\2025-12\VID_20251225_123209_00_010.insv
+OK  [raw] E:\Video Storage\Christmas 2025\Insta360X2\Camera01\LRV_20251225_123209_11_010.insv -> \\Synology-NAS1\Imagery\raw\video\Insta360\2025\2025-12\LRV_20251225_123209_11_010.insv
+OK  [raw] E:\Video Storage\Christmas 2025\Insta360X2\Camera01\VID_20251225_123209_10_010.insv -> \\Synology-NAS1\Imagery\raw\video\Insta360\2025\2025-12\VID_20251225_123209_10_010.insv
+OK  [raw] E:\Video Storage\Christmas 2025\Insta360X2\Camera01\VID_20251225_123327_00_011.insv -> \\Synology-NAS1\Imagery\raw\video\Insta360\2025\2025-12\VID_20251225_123327_00_011.insv
+OK  [raw] E:\Video Storage\Christmas 2025\Insta360X2\Camera01\LRV_20251225_123327_11_011.insv -> \\Synology-NAS1\Imagery\raw\video\Insta360\2025\2025-12\LRV_20251225_123327_11_011.insv
+OK  [raw] E:\Video Storage\Christmas 2025\Insta360X2\Camera01\VID_20251225_123327_10_011.insv -> \\Synology-NAS1\Imagery\raw\video\Insta360\2025\2025-12\VID_20251225_123327_10_011.insv
+SKIP (unknown): E:\Video Storage\Christmas 2025\Insta360X2\Camera01\IMG_20251225_123354_00_012.insp
+OK  [raw] E:\Video Storage\Christmas 2025\Insta360X2\Camera01\IMG_20251225_123354_00_012.dng -> \\Synology-NAS1\Imagery\raw\photo\Insta360\2025\2025-12\IMG_20251225_123354_00_012.dng
+SKIP (unknown): E:\Video Storage\Christmas 2025\Insta360X2\Camera01\IMG_20251225_123401_00_013.insp
+OK  [raw] E:\Video Storage\Christmas 2025\Insta360X2\Camera01\IMG_20251225_123401_00_013.dng -> \\Synology-NAS1\Imagery\raw\photo\Insta360\2025\2025-12\IMG_20251225_123401_00_013.dng
+OK  [raw] E:\Video Storage\Christmas 2025\Insta360X2\Camera01\VID_20251225_123437_00_014.insv -> \\Synology-NAS1\Imagery\raw\video\Insta360\2025\2025-12\VID_20251225_123437_00_014.insv
+OK  [raw] E:\Video Storage\Christmas 2025\Insta360X2\Camera01\LRV_20251225_123437_11_014.insv -> \\Synology-NAS1\Imagery\raw\video\Insta360\2025\2025-12\LRV_20251225_123437_11_014.insv
+OK  [raw] E:\Video Storage\Christmas 2025\Insta360X2\Camera01\VID_20251225_123437_10_014.insv -> \\Synology-NAS1\Imagery\raw\video\Insta360\2025\2025-12\VID_20251225_123437_10_014.insv
+OK  [raw] E:\Video Storage\Christmas 2025\Insta360X2\Camera01\VID_20251225_124947_00_015.insv -> \\Synology-NAS1\Imagery\raw\video\Insta360\2025\2025-12\VID_20251225_124947_00_015.insv
+OK  [raw] E:\Video Storage\Christmas 2025\Insta360X2\Camera01\LRV_20251225_124947_11_015.insv -> \\Synology-NAS1\Imagery\raw\video\Insta360\2025\2025-12\LRV_20251225_124947_11_015.insv
+OK  [raw] E:\Video Storage\Christmas 2025\Insta360X2\Camera01\VID_20251225_124947_10_015.insv -> \\Synology-NAS1\Imagery\raw\video\Insta360\2025\2025-12\VID_20251225_124947_10_015.insv
+OK  [raw] E:\Video Storage\Christmas 2025\Insta360X2\Camera01\VID_20251225_131744_00_016.insv -> \\Synology-NAS1\Imagery\raw\video\Insta360\2025\2025-12\VID_20251225_131744_00_016.insv
+OK  [raw] E:\Video Storage\Christmas 2025\Insta360X2\Camera01\LRV_20251225_131744_11_016.insv -> \\Synology-NAS1\Imagery\raw\video\Insta360\2025\2025-12\LRV_20251225_131744_11_016.insv
+OK  [raw] E:\Video Storage\Christmas 2025\Insta360X2\Camera01\VID_20251225_131744_10_016.insv -> \\Synology-NAS1\Imagery\raw\video\Insta360\2025\2025-12\VID_20251225_131744_10_016.insv
+OK  [raw] E:\Video Storage\Christmas 2025\Insta360X2\Camera01\VID_20251225_131930_00_017.insv -> \\Synology-NAS1\Imagery\raw\video\Insta360\2025\2025-12\VID_20251225_131930_00_017.insv
+OK  [raw] E:\Video Storage\Christmas 2025\Insta360X2\Camera01\LRV_20251225_131930_11_017.insv -> \\Synology-NAS1\Imagery\raw\video\Insta360\2025\2025-12\LRV_20251225_131930_11_017.insv
+OK  [raw] E:\Video Storage\Christmas 2025\Insta360X2\Camera01\VID_20251225_131930_10_017.insv -> \\Synology-NAS1\Imagery\raw\video\Insta360\2025\2025-12\VID_20251225_131930_10_017.insv
+OK  [raw] E:\Video Storage\Christmas 2025\Insta360X2\Camera01\VID_20251225_132122_00_018.insv -> \\Synology-NAS1\Imagery\raw\video\Insta360\2025\2025-12\VID_20251225_132122_00_018.insv
+OK  [raw] E:\Video Storage\Christmas 2025\Insta360X2\Camera01\LRV_20251225_132122_11_018.insv -> \\Synology-NAS1\Imagery\raw\video\Insta360\2025\2025-12\LRV_20251225_132122_11_018.insv
+OK  [raw] E:\Video Storage\Christmas 2025\Insta360X2\Camera01\VID_20251225_132122_10_018.insv -> \\Synology-NAS1\Imagery\raw\video\Insta360\2025\2025-12\VID_20251225_132122_10_018.insv
+SKIP (unknown): E:\Video Storage\Christmas 2025\Insta360X2\Camera01\IMG_20251225_132248_00_019.insp
+OK  [raw] E:\Video Storage\Christmas 2025\Insta360X2\Camera01\IMG_20251225_132248_00_019.dng -> \\Synology-NAS1\Imagery\raw\photo\Insta360\2025\2025-12\IMG_20251225_132248_00_019.dng
+OK  [raw] E:\Video Storage\Christmas 2025\Insta360X2\Camera01\VID_20251225_132322_00_020.insv -> \\Synology-NAS1\Imagery\raw\video\Insta360\2025\2025-12\VID_20251225_132322_00_020.insv
+OK  [raw] E:\Video Storage\Christmas 2025\Insta360X2\Camera01\LRV_20251225_132322_11_020.insv -> \\Synology-NAS1\Imagery\raw\video\Insta360\2025\2025-12\LRV_20251225_132322_11_020.insv
+OK  [raw] E:\Video Storage\Christmas 2025\Insta360X2\Camera01\VID_20251225_132322_10_020.insv -> \\Synology-NAS1\Imagery\raw\video\Insta360\2025\2025-12\VID_20251225_132322_10_020.insv
+SKIP (unknown): E:\Video Storage\Christmas 2025\Insta360X2\Camera01\IMG_20251225_133340_00_021.insp
+OK  [raw] E:\Video Storage\Christmas 2025\Insta360X2\Camera01\IMG_20251225_133340_00_021.dng -> \\Synology-NAS1\Imagery\raw\photo\Insta360\2025\2025-12\IMG_20251225_133340_00_021.dng
+OK  [raw] E:\Video Storage\Christmas 2025\Insta360X2\Camera01\VID_20251225_133358_00_022.insv -> \\Synology-NAS1\Imagery\raw\video\Insta360\2025\2025-12\VID_20251225_133358_00_022.insv
+OK  [raw] E:\Video Storage\Christmas 2025\Insta360X2\Camera01\VID_20251225_133358_10_022.insv -> \\Synology-NAS1\Imagery\raw\video\Insta360\2025\2025-12\VID_20251225_133358_10_022.insv
+OK  [raw] E:\Video Storage\Christmas 2025\Insta360X2\Camera01\VID_20251225_134109_00_023.insv -> \\Synology-NAS1\Imagery\raw\video\Insta360\2025\2025-12\VID_20251225_134109_00_023.insv
+OK  [raw] E:\Video Storage\Christmas 2025\Insta360X2\Camera01\VID_20251225_134109_10_023.insv -> \\Synology-NAS1\Imagery\raw\video\Insta360\2025\2025-12\VID_20251225_134109_10_023.insv
+OK  [raw] E:\Video Storage\Christmas 2025\Insta360X2\Camera01\VID_20251225_141908_00_024.insv -> \\Synology-NAS1\Imagery\raw\video\Insta360\2025\2025-12\VID_20251225_141908_00_024.insv
+OK  [raw] E:\Video Storage\Christmas 2025\Insta360X2\Camera01\VID_20251225_141908_10_024.insv -> \\Synology-NAS1\Imagery\raw\video\Insta360\2025\2025-12\VID_20251225_141908_10_024.insv
+SKIP (unknown): E:\Video Storage\Christmas 2025\Insta360X2\Camera01\Thumb\IMG_20251225_132248_00_019.bmp
+
+Summary:
+  raw: 60
+  processed: 0
+  unknown: 0
+  skipped: 6
+  errors: 0
+Log file: C:\Users\Caleb\OneDrive\Desktop\SnapSift\logs\intake_20260129_214752.log
