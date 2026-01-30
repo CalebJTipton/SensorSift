@@ -492,10 +492,10 @@ def _sanitize_meta_folder(value: str, fallback: str) -> str:
     return candidate
 
 
-def raw_metadata_prefix(cfg: AppConfig) -> Path:
+def raw_metadata_prefix(cfg: AppConfig, bucket: str) -> Path:
     tag = _sanitize_meta_folder(cfg.friend_tag, META_DEFAULT_TAG)
     loc = _sanitize_meta_folder(cfg.location, META_DEFAULT_LOCATION)
-    return cfg.raw_root / tag / loc
+    return cfg.raw_root / bucket / tag / loc
 
 
 # -----------------------------
@@ -593,7 +593,8 @@ def intake_media(cfg: AppConfig, source: Path, log_cb, progress_cb, stop_flag) -
             year, year_month = date_folders_from_dt(dt)
 
             if bucket == "raw":
-                base_dir = cfg.raw_root / raw_bucket_subfolder(src)
+                bucket_sub = raw_bucket_subfolder(src)
+                base_dir = raw_metadata_prefix(cfg, bucket_sub)
             elif bucket == "processed":
                 base_dir = cfg.processed_stage_root
             else:
@@ -744,6 +745,14 @@ class SetupWizard(tk.Toplevel):
         ttk.Entry(row, textvariable=self.var_config_root, width=70).pack(side="left", padx=8)
         ttk.Button(row, text="Browse", command=lambda: self._browse_dir_into(self.var_config_root)).pack(side="left")
 
+        meta_block = ttk.LabelFrame(frm, text="Content metadata (applies to RAW archive)", padding=12)
+        meta_block.pack(fill="x", pady=8)
+        meta_row = ttk.Frame(meta_block); meta_row.pack(fill="x", pady=4)
+        ttk.Label(meta_row, text="Friend tag:", width=12).pack(side="left")
+        ttk.Entry(meta_row, textvariable=self.var_friend_tag, width=40).pack(side="left", padx=8)
+        ttk.Label(meta_row, text="Location:", width=12).pack(side="left")
+        ttk.Entry(meta_row, textvariable=self.var_location, width=40).pack(side="left", padx=8)
+
         # Dest paths
         block2 = ttk.LabelFrame(frm, text="Import destinations", padding=12)
         block2.pack(fill="x", pady=10)
@@ -865,6 +874,8 @@ class SetupWizard(tk.Toplevel):
                 routing_rules=rules,
                 date_strategy=self.var_date_strategy.get(),
                 exiftool_path=self.var_exiftool_path.get().strip(),  # blank disables
+                friend_tag=self.var_friend_tag.get().strip(),
+                location=self.var_location.get().strip(),
                 immich=ImmichConfig(
                     enabled=bool(self.var_immich_enabled.get()),
                     cli_path=self.var_cli_path.get().strip() or "immich",
